@@ -32,6 +32,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.PointOfInterest;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.Polyline;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -504,6 +505,14 @@ final class GoogleMapController
     methodChannel.invokeMethod("map#onLongPress", arguments);
   }
 
+  public void onPoiClick(PointOfInterest poi) {
+    final Map<String, Object> arguments = new HashMap<>(2);
+    arguments.put("position", Convert.latLngToJson(poi.latLng));
+    arguments.put("name", poi.name);
+    arguments.put("placeId", poi.placeId);
+    methodChannel.invokeMethod("map#onPoiClick", arguments);
+  }
+
   @Override
   public void onCameraMoveStarted(int reason) {
     final Map<String, Object> arguments = new HashMap<>(2);
@@ -597,6 +606,7 @@ final class GoogleMapController
     googleMap.setOnCircleClickListener(listener);
     googleMap.setOnMapClickListener(listener);
     googleMap.setOnMapLongClickListener(listener);
+    googleMap.setOnPoiClickListener(listener);
   }
 
   // @Override

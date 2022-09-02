@@ -4,6 +4,8 @@
 
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 
+import '../types/point_of_interest.dart';
+
 /// Generic Event coming from the native side of Maps.
 ///
 /// All MapEvents contain the `mapId` that originated the event. This should
@@ -169,4 +171,10 @@ class MapLongPressEvent extends _PositionedMapEvent<void> {
   ///
   /// The `position` of this event is the LatLng where the Map was long pressed.
   MapLongPressEvent(int mapId, LatLng position) : super(mapId, position, null);
+}
+
+/// An event fired when a Map is long pressed.
+class MapPoiClickEvent extends MapEvent<PointOfInterest> {
+  /// Build an MapTap Event triggered from the map represented by `mapId`.
+  MapPoiClickEvent(int mapId, PointOfInterest poi) : super(mapId, poi);
 }

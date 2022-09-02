@@ -166,6 +166,11 @@ class GoogleMapsFlutterIOS extends GoogleMapsFlutterPlatform {
     return _events(mapId).whereType<MapLongPressEvent>();
   }
 
+  @override
+  Stream<MapPoiClickEvent> onPoiClick({required int mapId}) {
+    return _events(mapId).whereType<MapPoiClickEvent>();
+  }
+
   Future<dynamic> _handleMethodCall(MethodCall call, int mapId) async {
     switch (call.method) {
       case 'camera#onMoveStarted':

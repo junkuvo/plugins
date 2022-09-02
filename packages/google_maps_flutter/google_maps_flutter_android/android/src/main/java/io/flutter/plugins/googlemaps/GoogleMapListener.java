@@ -7,7 +7,7 @@ package io.flutter.plugins.googlemaps;
 import com.google.android.gms.maps.GoogleMap;
 
 interface GoogleMapListener
-    extends GoogleMap.OnCameraIdleListener,
+        extends GoogleMap.OnCameraIdleListener,
         GoogleMap.OnCameraMoveListener,
         GoogleMap.OnCameraMoveStartedListener,
         GoogleMap.OnInfoWindowClickListener,
@@ -17,4 +17,6 @@ interface GoogleMapListener
         GoogleMap.OnCircleClickListener,
         GoogleMap.OnMapClickListener,
         GoogleMap.OnMapLongClickListener,
-        GoogleMap.OnMarkerDragListener {}
+        GoogleMap.OnMarkerDragListener,
+        GoogleMap.OnPoiClickListener {
+}
