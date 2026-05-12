@@ -1,5 +1,3 @@
-import 'dart:ui' show hashValues;
-
 import '../../google_maps_flutter_platform_interface.dart';
 
 /// A pair of latitude and longitude coordinates, stored as degrees.
@@ -48,5 +46,5 @@ class PointOfInterest {
   }
 
   @override
-  int get hashCode => hashValues(position, name, placeId);
+  int get hashCode => Object.hash(position, name, placeId);
 }

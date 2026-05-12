@@ -6,7 +6,7 @@ version: 2.1.12
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.14.0 <3.0.0"
+  sdk: ">=2.14.0 <4.0.0"
   flutter: ">=2.10.0"
 
 flutter:
@@ -25,10 +25,8 @@ dependencies:
     path: ../google_maps_flutter_android
   google_maps_flutter_ios:
     path: ../google_maps_flutter_ios
-  google_maps_flutter_platform_interface: # ^2.2.1
-    git:
-      url: https://github.com/junkuvo/google_maps_flutter_platform_interface.git
-      ref: main
+  google_maps_flutter_platform_interface:
+    path: ../google_maps_flutter_platform_interface
 
 dev_dependencies:
   flutter_test:
