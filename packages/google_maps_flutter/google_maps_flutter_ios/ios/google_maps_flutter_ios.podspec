@@ -18,8 +18,8 @@ Downloaded by pub (not CocoaPods).
   s.public_header_files = 'Classes/**/*.h'
   s.module_map = 'Classes/google_maps_flutter_ios.modulemap'
   s.dependency 'Flutter'
-  s.dependency 'GoogleMaps'
+  s.dependency 'GoogleMaps', '>= 7.4.0'
   s.static_framework = true
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '12.0'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end
