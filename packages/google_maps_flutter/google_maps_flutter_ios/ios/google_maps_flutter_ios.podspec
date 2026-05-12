@@ -20,6 +20,6 @@ Downloaded by pub (not CocoaPods).
   s.dependency 'Flutter'
   s.dependency 'GoogleMaps', '>= 7.4.0'
   s.static_framework = true
-  s.platform = :ios, '12.0'
+  s.platform = :ios, '14.0'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end
